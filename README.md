@@ -221,31 +221,33 @@ plt.show()
 
 ## Output:
 - **i)** Read and Display an Image
-- <img width="515" height="321" alt="Untitled" src="https://github.com/user-attachments/assets/2a790bb7-042e-4b94-9d33-56793228933c" />
-<img width="515" height="321" alt="Untitled-1" src="https://github.com/user-attachments/assets/f8af40fe-5041-4d4b-b86e-642d87c49abe" />
-<img width="515" height="321" alt="Untitled" src="https://github.com/user-attachments/assets/da474bca-8a8d-4efb-b01b-385223d7ef97" />
-<img width="515" height="321" alt="Untitled-1" src="https://github.com/user-attachments/assets/ae2cd866-5733-49ea-8ce8-db987a3fffc0" />
-7aea9db66ae" />
-<img width="515" height="321" alt="Untitled" src="https://github.com/user-attachments/assets/0e0cf2a6-9adc-464f-8329-43fd42ea6886" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/0e6a6ccf-2b83-4037-acc5-7c5c4f73fdde" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/3c05b4dc-86b4-471f-8c81-659d909cc810" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/f62f36d7-4546-42a3-9d1f-0a6d9a44b715" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/5a567e0f-7f9a-4f49-992c-37b562c9b7fa" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/0b15e4d8-e27c-4655-a517-18095fc5355c" />
+
 
 
 
 
 - - **ii)** Modify Image Contrast.
-<img width="515" height="321" alt="Untitled-1" src="https://github.com/user-attachments/assets/e707397e-60b6-4801-90bc-f1d33b2673eb" />
-<img width="515" height="321" alt="Untitled" src="https://github.com/user-attachments/assets/b0e10f56-0df7-4993-ae37-a595c7dd7fb9" />
-<img width="515" height="321" alt="Untitled-1" src="https://github.com/user-attachments/assets/fa1eed14-feb1-42f3-a4d4-d7162ae71284" />
-<img width="515" height="321" alt="Untitled" src="https://github.com/user-attachments/assets/7fb55a87-f038-425b-921e-18dc670ea3f5" />
-<img width="515" height="321" alt="Untitled-1" src="https://github.com/user-attachments/assets/80b2b130-f1ad-4165-9be3-a0be585f0ad3" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/bad61302-ef5b-494a-981d-93f39b33b0d5" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/35c46a83-f93f-4973-a107-a3f9b36211fe" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/f075749f-ca7a-4f0b-a4a9-1b7bd2ebf1dd" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/a4b8b130-ec64-4e3d-8df9-a1bdcdd2f5ff" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/a5ced12d-4c5d-4589-9298-7237131b0a33" />
+
 
 
 
 - **iii)** Generate Third Image Using Bitwise Operations.
-- <img width="515" height="321" alt="Untitled-1" src="https://github.com/user-attachments/assets/47f81174-a661-499a-94ae-c253935963e1" />
-- <img width="493" height="411" alt="Untitled" src="https://github.com/user-attachments/assets/5850e864-6011-49c3-9714-c038c7a019fd" />
-<img width="389" height="411" alt="Untitled-1" src="https://github.com/user-attachments/assets/db77a653-6ac2-40e8-9c6f-ae83da08c91c" />
-<img width="515" height="321" alt="Untitled" src="https://github.com/user-attachments/assets/ce1f55dd-0fa6-421f-8352-f9dbea85dc48" />
-<img width="515" height="321" alt="Untitled-1" src="https://github.com/user-attachments/assets/5066ddb8-6d3f-431b-b661-41ae3c4148cd" />
+<img width="493" height="411" alt="download" src="https://github.com/user-attachments/assets/e296b377-21ec-4901-9007-bbb2e03e14ef" />
+<img width="389" height="411" alt="download" src="https://github.com/user-attachments/assets/bfb10fbd-908e-44<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/37e3c52f-bd02-4447-84df-5432cd85620d" />
+49-84cf-477e5d1b4fd5" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/ada79a1c-1e4b-4815-b9ee-bdcb241d43ed" />
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/b98e2bbe-8be5-4193-86c9-2a85fe203197" />
+
 
 
 
