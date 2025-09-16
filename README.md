@@ -31,122 +31,216 @@ Display the original, lower contrast, and higher contrast images.
 Split the image (boy.jpg) into B, G, R components and display the channels
 
 ## Program Developed By:
-- **Name:** VIGNESH M  
-- **Register Number:** 212223240176
+- **Name:** SAKTHIVEL S  
+- **Register Number:** 212223220090
 
   ### Ex. No. 01
 
 #### 1. Read the image ('CAPTEN.jpg') using OpenCV imread() as a grayscale image.
 ```
 import cv2
-import numpy as np
 import matplotlib.pyplot as plt
-img =cv2.imread('Eagle_in_Flight.jpg',cv2.IMREAD_COLOR)
-img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-```
 
-#### 2. Print the image width, height & Channel.
-```
-img.shape
-```
+# Read the image using OpenCV
+img = cv2.imread('sakthi.jpg', cv2.IMREAD_COLOR)
 
+
+```
+Draw a circle at the center of the image.
 #### 3. Display the image using matplotlib imshow().
 ```
-img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2GRAY)
-plt.imshow(img_gray,cmap='grey')
-plt.show()
-```
+# Load the image
+image = cv2.imread('sakthi.jpg') 
 
-#### 4. Save the image as a PNG file using OpenCV imwrite().
-```
-img=cv2.imread('Eagle_in_Flight.jpg')
-cv2.imwrite('Eagle.png',img)
-```
-
-#### 5. Read the saved image above as a color image using cv2.cvtColor().
-```
-img=cv2.imread('Eagle.png')
-img_rgb = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-```
-
-
-
-
-#### 6. Crop the image to extract any specific (CAPTEN alone) object from the image.
-```
-crop = img_rgb[0:450,200:550] 
-plt.imshow(crop[:,:,::-1])
-plt.title("Cropped Region")
-plt.axis("off")
-plt.show()
-crop.shape
-```
-
-#### 7. Resize the image up by a factor of 2x.
-```
-res= cv2.resize(crop,(200*2, 200*2))
-```
-
-#### 8. Flip the cropped/resized image horizontally.
-```
-flip= cv2.flip(res,1)
-plt.imshow(flip[:,:,::-1])
-plt.title("Flipped Horizontally")
-plt.axis("off")
-```
-
-
-#### 9. Read in the image ('CAPTEN.jpg').
-```
-img=cv2.imread('Apollo-11-launch.jpg',cv2.IMREAD_COLOR)
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+```
 img_rgb.shape
+(1280, 960, 3)
+circle_img = cv2.circle(img_rgb,(400,300),150,(255,0,0),10) # cv2.circle(image, center, radius, color, thickness)
 ```
+plt.imshow(circle_img, cmap='viridis')  
+plt.title("Image with Circle")
+plt.axis('off')  
+plt.show()
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/7757b02d-3bff-4ee1-af78-d42089d816f5" />
 
-#### 10. Add the following text to the dark area at the bottom of the image (centered on the image):
+## Draw a rectangle around  the whole image
 ```
-text = 'Apollo 11 Saturn V Launch, July 16, 1969'
-font_face = cv2.FONT_HERSHEY_PLAIN
+# Load the image
+image = cv2.imread('sakthi.jpg') 
+
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+```
+img.shape
+(1280, 960, 3)
+
+# Draw a rectangle around the Whole image
+rectangle_img = cv2.rectangle(img_rgb, (0, 0), (768, 600), (0, 0, 255), 10)  # cv2.rectangle(image, start_point, end_point, color, thickness)
+```
+plt.imshow(rectangle_img, cmap='viridis')  
+plt.title("Image with Rectangle")
+plt.axis('off')  
+plt.show()
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/a2da0664-5c6f-4ce8-8e7e-6a59be1da68b" />
+
+
+
+
+#### Add the text "OpenCV Drawing" at the top-left corner of the image.
+```
+# Load the image
+image = cv2.imread('sakthi.jpg') 
+
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+# Add text to the image
+text_img = cv2.putText(img_rgb, "OpenCV Drawing", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 10)  ## cv2.putText(image, text, position, font, font_scale, color, thickness)
 
 ```
+```
+plt.imshow(text_img, cmap='viridis')  
+plt.title("Image with Text")
+plt.axis('off')  
+plt.show()
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/c5c51533-2afb-4b1d-88bd-923f9231d936" />
 
-#### 11. Draw a magenta rectangle that encompasses the launch tower and the rocket.
-```
-rcol= (255, 0, 255)
-cv2.rectangle(img_rgb, (400, 100), (800, 650), rcol, 3)  
-```
+#### Step3:
+o Convert the image from RGB to HSV and display it.
+    
+o Convert the image from RGB to GRAY and display it. 
 
-#### 13. Display the final annotated image.
+o Convert the image from RGB to YCrCb and display it. 
+    
+o Convert the HSV image back to RGB and display it.
 ```
-plt.title("Annotated image")
-plt.imshow(img_rgb)
+# Load the image
+image = cv2.imread('sakthi.jpg')
+
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+```
+```
+# Original RGB Image
+plt.imshow(image_rgb)
+plt.title("Original RGB Image")
+plt.axis("off")
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/b61d6350-ace2-41e0-9d49-8abc2837223a" />
+
+
+```
+# Convert RGB to HSV
+image_hsv = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2HSV)
+```
+```
+# HSV Image
+plt.imshow(image_hsv)
+plt.title("HSV Image")
+plt.axis("off")
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/b7854704-7384-42b8-a06d-ce30e3721108" />
+
+# Convert RGB to GRAY
+image_gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
+
+```
+# Grayscale Image
+plt.imshow(image_gray, cmap='gray')
+plt.title("Grayscale Image")
+plt.axis("off")
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/12fcd987-5096-4b60-8e8d-706694433d0d" />
+
+# Convert RGB to YCrCb
+image_ycrcb = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2YCrCb)
+
+```
+# YCrCb Image
+plt.imshow(image_ycrcb)
+plt.title("YCrCb Image")
+plt.axis("off")
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/a9d7dad7-519f-4d57-ad40-c4a854d3c222" />
+
+# Convert HSV back to RGB
+image_hsv_to_rgb = cv2.cvtColor(image_hsv, cv2.COLOR_HSV2RGB)
+```
+plt.imshow(image_hsv_to_rgb)
+plt.title("HSV to RGB Image")
+plt.axis("off")
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/99555949-5495-4e85-8a20-cf6fadd699d5" />
+
+
+#### Step4:
+o Access and print the value of the pixel at coordinates (100, 100). 
+
+o Modify the color of the pixel at (200, 200) to white.
+```
+# Modify a block of pixels (300x300) to white, starting from (200, 200)
+image[200:500, 200:500] = [255, 255, 255]  # Rows: 200-499, Columns: 200-499
+```
+```
+# Convert BGR to RGB for displaying with Matplotlib
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+```
+```
+# Display the modified image
+plt.imshow(image_rgb)
+plt.title("Image with 300x300 White Block")
+plt.axis("off")
+plt.show()
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/42c6b707-6984-465c-a783-0879e57d8ec2" />
+
+#### Step5:
+o Resize the original image to half its size and display it.
+```
+# Load the image
+image = cv2.imread('sakthi.jpg')
+
+image.shape
+
+(300, 384, 3)
+```
+# Display the resized image
+```
+plt.imshow(resized_image_rgb)
+plt.title("Resized Image (Half Size)")
+plt.axis("off")
+plt.show()
+```
+<img width="493" height="411" alt="download" src="https://github.com/user-attachments/assets/c7879358-f3fa-4924-af90-b29507fd0a15" />
+
+## Step6:
+o Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+```
+# Load the image
+image = cv2.imread('sakthi.jpg')
+image.shape
+(1280, 960, 3)
+```
+```
+# Crop a 300x300 region starting from (50, 50)
+roi = image[50:350, 50:350]  # Rows: 50-349, Columns: 50-349
+```
+```
+# Convert BGR to RGB for displaying with Matplotlib
+roi_rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+```
+```
+# Display the cropped region (ROI)
+plt.imshow(roi_rgb)
+plt.title("Cropped Region of Interest (ROI)")
+plt.axis("off")
 plt.show()
 ```
 
-
-#### 14. Read the image ('CAPTEN.jpg').
-```
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-```
-
-#### 15. Adjust the brightness of the image.
-```
-boy = cv2.imread("boy.jpg")   # make sure boy.jpg is uploaded in Colab
-if boy is None:
-    raise FileNotFoundError("boy.jpg not found! Please upload it using left sidebar > Files.")
-
-boy_rgb = cv2.cvtColor(boy, cv2.COLOR_BGR2RGB)
-```
-
-#### 16. Create brighter and darker images.
-```
-matrix = np.ones(boy_rgb.shape, dtype="uint8") * 50   # brightness adjustment value
-
-img_brighter = cv2.add(boy_rgb, matrix)
-img_darker   = cv2.subtract(boy_rgb, matrix)
-```
 
 #### 17. Display the images (Original Image, Darker Image, Brighter Image).
 ```
@@ -156,99 +250,47 @@ plt.subplot(1,3,2); plt.imshow(img_darker); plt.title("Darker"); plt.axis("off")
 plt.subplot(1,3,3); plt.imshow(img_brighter); plt.title("Brighter"); plt.axis("off")
 plt.show()
 ```
+<img width="389" height="411" alt="download" src="https://github.com/user-attachments/assets/dc770317-fc15-4681-b6e9-8462e66414f2" />
 
-#### 18. Modify the image contrast.
+####Step7:
+o Flip the original image horizontally and display it. 
+
+o Flip the original image vertically and display it.
 ```
-matrix1 = np.ones(boy_rgb.shape, dtype="float32") * 1.1
-matrix2 = np.ones(boy_rgb.shape, dtype="float32") * 1.2
-
-img_higher1 = cv2.multiply(boy_rgb.astype("float32"), matrix1)
-img_higher2 = cv2.multiply(boy_rgb.astype("float32"), matrix2)
+# Load the image
+image = cv2.imread('sakthi.jpg')
 ```
-
-#### 19. Display the images (Original, Lower Contrast, Higher Contrast).
 ```
-plt.figure(figsize=(12,4))
-plt.subplot(1,3,1); plt.imshow(CAPTEN_rgb); plt.title("Original"); plt.axis("off")
-plt.subplot(1,3,2); plt.imshow(img_higher1); plt.title("Higher Contrast (1.1x)"); plt.axis("off")
-plt.subplot(1,3,3); plt.imshow(img_higher2); plt.title("Higher Contrast (1.2x)"); plt.axis("off")
-plt.show()
+# Flip the image horizontally (left-right)
+flipped_horizontally = cv2.flip(image, 1)
+```
+```
+# Convert BGR to RGB for displaying with Matplotlib
+flipped_horizontally_rgb = cv2.cvtColor(flipped_horizontally, cv2.COLOR_BGR2RGB)
+```
+```
+# Horizontal flip
+plt.imshow(flipped_horizontally_rgb)
+plt.title("Flipped Horizontally")
+plt.axis("off")
+```
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/6deb1afd-3023-42b0-be79-80154662b37b" />
+
+
+# Flip the image vertically (up-down)
+flipped_vertically = cv2.flip(image, 0)
 
 ```
-
-#### 20. Split the image (CAPTEN.jpg) into the B,G,R components & Display the channels.
+# Convert BGR to RGB for displaying with Matplotlib
+flipped_vertically_rgb = cv2.cvtColor(flipped_vertically, cv2.COLOR_BGR2RGB)
 ```
-b, g, r = cv2.split(boy_rgb)
-
-plt.figure(figsize=(12,4))
-plt.subplot(1,3,1); plt.imshow(r, cmap="Reds"); plt.title("Red Channel"); plt.axis("off")
-plt.subplot(1,3,2); plt.imshow(g, cmap="Greens"); plt.title("Green Channel"); plt.axis("off")
-plt.subplot(1,3,3); plt.imshow(b, cmap="Blues"); plt.title("Blue Channel"); plt.axis("off")
-plt.show()
 ```
-
-#### 21. Merged the R, G, B , displays along with the original image
+# Vertical flip
+plt.imshow(flipped_vertically_rgb)
+plt.title("Flipped Vertically")
+plt.axis("off")
 ```
-merged_rgb = cv2.merge([r, g, b])
-
-plt.figure(figsize=(8,4))
-plt.subplot(1,2,1); plt.imshow(boy_rgb); plt.title("Original RGB"); plt.axis("off")
-plt.subplot(1,2,2); plt.imshow(merged_rgb); plt.title("Merged RGB"); plt.axis("off")
-plt.show()
-```
-
-#### 22. Split the image into the H, S, V components & Display the channels.
-```
-boy_hsv = cv2.cvtColor(boy_rgb, cv2.COLOR_RGB2HSV)
-h, s, v = cv2.split(boy_hsv)
-
-plt.figure(figsize=(12,4))
-plt.subplot(1,3,1); plt.imshow(h, cmap="hsv"); plt.title("Hue Channel"); plt.axis("off")
-plt.subplot(1,3,2); plt.imshow(s, cmap="gray"); plt.title("Saturation Channel"); plt.axis("off")
-plt.subplot(1,3,3); plt.imshow(v, cmap="gray"); plt.title("Value Channel"); plt.axis("off")
-plt.show()
-```
-#### 23. Merged the H, S, V, displays along with original image.
-```
-merged_hsv = cv2.merge([h, s, v])
-merged_hsv_rgb = cv2.cvtColor(merged_hsv, cv2.COLOR_HSV2RGB)
-
-plt.figure(figsize=(8,4))
-plt.subplot(1,2,1); plt.imshow(boy_rgb); plt.title("Original RGB"); plt.axis("off")
-plt.subplot(1,2,2); plt.imshow(merged_hsv_rgb); plt.title("Merged HSV→RGB"); plt.axis("off")
-plt.show()
-```
-
-## Output:
-- **i)** Read and Display an Image
-- ![sakthi](https://github.com/user-attachments/assets/a94d316b-f7f0-45e6-9b13-549798e76f29)
-
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/484024bf-6255-4c23-8f51-cb6ea68aa6be" />
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/3589bac4
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/1270969f-62a2-427b-9f9a-eb0acef07966" />
--2bbe-4e09-bcf2-235a8bd58037" />
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/fa2afbac-ba81-495d-b14b-b42fc4110d53" />
-
-
-
-
-- - **ii)** Modify Image Contrast.
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/6ef2796e-b383-4cb3-b178-7f07e46ce4d8" />
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/ae40d96a-572f-47e1-b9b4-c6d9f0d01a2d" />
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/fde7a9b2-77e5-444d-96b8-8c8e99ae53a8" />
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/16616c21-973e-4769-96df-2a5a58b041c7" />
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/16ae28a9-9dc3-4835-8059-683d62da5960" />
-
-
-
-
-- **iii)** Generate Third Image Using Bitwise Operations.
-<img width="493" height="411" alt="download" src="https://github.com/user-attachments/assets/a5ebf3b6-61e9-4a66-9f84-626a018842d0" />
-<img width="389" height="411" alt="download" src="https://github.com/user-attachments/assets/cbb2130a-6ed3-4f48-8fb6-c168924ebf59" />
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/8f8a3ba2-b3b6-44ea-99db-2373eab3297b" />
-<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/532803ef-eaca-4ce9-843a-84204e8cf5d2" />
-
-
+<img width="297" height="411" alt="download" src="https://github.com/user-attachments/assets/e7e28aab-01a5-45f0-ab11-78e61b13cda3" />
 
 ## Result:
 Thus, the images were read, displayed, brightness and contrast adjustments were made, and bitwise operations were performed successfully using the Python program.
