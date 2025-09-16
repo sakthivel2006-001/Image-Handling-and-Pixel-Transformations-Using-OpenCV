@@ -45,7 +45,11 @@ import matplotlib.pyplot as plt
 img = cv2.imread('sakthi.jpg', cv2.IMREAD_COLOR)
 
 
+
 ```
+## Orginal Image
+![popl](https://github.com/user-attachments/assets/3a7ffb3f-ba5a-4e47-ba9a-f8fc59eb900c)
+
 Draw a circle at the center of the image.
 #### 3. Display the image using matplotlib imshow().
 ```
